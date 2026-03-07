@@ -25,7 +25,7 @@ export const botConfig = {
     activities: [
       {
         // Text users will see (example: "Playing /help | Titan Bot").
-        name: "/help | Titan Bot",
+        name: "Made with ❤️",
         // Activity type number (0 = Playing).
         type: 0, 
       },
@@ -348,9 +348,9 @@ export const botConfig = {
     maxInMemoryAuditEntries: 1000,
 
     // If true, log every verification action.
-    logAllVerifications: true,     
+    logAllVerifications: true,
     // If true, preserve verification audit history.
-    keepAuditTrail: true         
+    keepAuditTrail: true,
   },
 
   // =========================
