@@ -8,8 +8,8 @@ export const botConfig = {
     status: "online",
     activities: [
       {
-        name: "Made with ❤️",
-        type: 0,
+        name: "youtube.com/@TouchDisc",
+        type: 3,
       },
     ],
   },
