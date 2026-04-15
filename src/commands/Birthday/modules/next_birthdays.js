@@ -51,7 +51,7 @@ export default {
                 }
 
                 embed.addFields({
-                    name: `${displayIndex}. ${member.displayName}`,
+                    name: `${displayIndex}.`,
                     value: `<@${birthday.userId}>\n📅 **Date:** ${birthday.monthName} ${birthday.day}\n⏰ **Time:** ${timeUntil}`,
                     inline: false
                 });

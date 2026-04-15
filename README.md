@@ -8,14 +8,15 @@
 
 ## 📚 Table of Contents
 
-- [🌟 Features Overview](#-features-overview)
-- [🚀 Quick Setup](#-video-tutorial)
-- [💡 Manual Installation Steps](#installation-steps)
-- [🗄️ Database System](#️-database-system)
-- [🌐 Support Server](#-support-server)
-- [🏗️ Bot Architecture](#-bot-architecture)
-- [🤝 Contributing](#-contributing)
+- [🌟 Features Overview](#features-overview)
+- [🚀 Quick Setup](#quick-setup)
+- [⚙️ Manual Installation Steps](#manual-installation-steps)
+- [🗄️ Database System](#database-system)
+- [🌐 Support Server](https://discord.gg/QnWNz2dKCE)
+- [🏗️ Bot Architecture](#bot-architecture)
+- [🤝 Contributing](#contributing)
 
+<a name="features-overview"></a>
 ## 🌟 Features Overview
 
 TitanBot offers a complete suite of tools for Discord server management and community engagement:
@@ -44,7 +45,7 @@ TitanBot offers a complete suite of tools for Discord server management and comm
 - **Ticket Limits** - Prevent spam
 - **Transcript System** - Save ticket history
 
-### 🔢 Server Counters
+### � Server Stats
 - **Member Counter** - Live member count channels
 - **Voice Counters** - Track voice stats
 - **Dynamic Updates** - Real-time channel updates
@@ -86,18 +87,20 @@ TitanBot offers a complete suite of tools for Discord server management and comm
 </tr>
 </table>
 
+<a name="quick-setup"></a>
 ## 🚀 Quick Setup (recommend)
 
 ### 📹 Video Tutorial
 For a detailed step-by-step setup guide, watch our comprehensive video tutorial:
-[**TitanBot Setup Tutorial**](https://www.youtube.com/watch?v=YOUR_TUTORIAL_ID)
+[**TitanBot Setup Tutorial**](https://www.youtube.com/@TouchDisc)
+
+<a name="manual-installation-steps"></a>
+## ⚙️ Manual Installation Steps
 
 ### Prerequisites
 - Node.js 18.0.0 or higher
 - PostgreSQL server (recommended) or memory storage fallback
 - Discord bot application with proper intents
-
-### Installation Steps
 
 1. **Clone the Repository**
    ```bash
@@ -114,38 +117,24 @@ For a detailed step-by-step setup guide, watch our comprehensive video tutorial:
    ```bash
    cp .env.example .env
    ```
-   Edit `.env` with your configuration:
+   Edit `.env` with your configuration (only the following variables require configuration, leave remaining variables as default):
    ```env
    # Discord Bot Configuration
    DISCORD_TOKEN=your_discord_bot_token_here
    CLIENT_ID=your_discord_client_id_here
    GUILD_ID=your_discord_guild_id_here
 
-   # PostgreSQL Configuration (Recommended)
-   POSTGRES_URL=postgresql://titanbot:yourpassword@localhost:5432/titanbot
+   # PostgreSQL Configuration (Primary Database)
+   POSTGRES_URL=postgresql://postgres:yourpassword@localhost:5432/titanbot
    POSTGRES_HOST=localhost
    POSTGRES_PORT=5432
    POSTGRES_DB=titanbot
-   POSTGRES_USER=titanbot
+   POSTGRES_USER=postgres
    POSTGRES_PASSWORD=yourpassword
-   POSTGRES_SSL=false
-   # Optional trusted CA for TLS validation (recommended in production)
-   # POSTGRES_CA_CERT="-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----"
-   # POSTGRES_CA_CERT_PATH=/path/to/postgres-ca.pem
-
-   # Migration Settings
-   AUTO_MIGRATE=false
-   SCHEMA_VERSION=1
-   SCHEMA_VERSION_LABEL=baseline-v1
-
-   # Bot Configuration
-   NODE_ENV=production
-   LOG_LEVEL=warn
    ```
 
    Production note:
    - `NODE_ENV=production`
-   - `POSTGRES_SSL=true` (required in production; startup fails closed if disabled)
    - `LOG_LEVEL=warn` for a clean production console (critical issues + startup status)
    - `LOG_LEVEL=info` if you want more detailed operational logs
    - If your chosen `PORT` is already used, TitanBot automatically tries the next port(s)
@@ -155,7 +144,7 @@ For a detailed step-by-step setup guide, watch our comprehensive video tutorial:
    - `LOG_LEVEL`: `error`, `warn`, `info`, `http`, `verbose`, `debug`, `silly`
    - Accepted aliases for `LOG_LEVEL` in this bot: `warns`, `warning`, `warnings` → `warn`
 
-   Recommended production `.env` (easy mode):
+   Recommended production `.env` (easy mode + default mode):
    ```env
    NODE_ENV=production
    LOG_LEVEL=warn
@@ -190,6 +179,7 @@ For a detailed step-by-step setup guide, watch our comprehensive video tutorial:
 - `npm run migrate:check` fails if the database schema version does not match the code's expected version.
 - `npm run migrate:status` prints current vs expected schema version metadata.
 
+<a name="database-system"></a>
 ## 🗄️ Database System
 
 TitanBot uses **PostgreSQL** as its primary database with intelligent fallback to memory storage:
@@ -210,6 +200,7 @@ TitanBot uses **PostgreSQL** as its primary database with intelligent fallback t
 - **Backward Compatibility**: Maintains existing API structure
 - **Zero Downtime**: Seamless switching between database and memory
 
+<a name="bot-architecture"></a>
 ## 🏗️ Bot Architecture
 
 ### Technology Stack
@@ -229,7 +220,6 @@ TitanBot requires the following Discord intents:
 - Guild Message Reactions
 - Guild Voice States
 - Direct Messages
-- And more...
 
 ### Required Permissions
 - **Send Messages**
@@ -243,6 +233,7 @@ TitanBot requires the following Discord intents:
 - **Kick Members**
 - **Manage Messages**
 
+<a name="contributing"></a>
 ## 🤝 Contributing
 
 We welcome contributions to TitanBot! Here's how you can help:
@@ -268,7 +259,3 @@ TitanBot is released under the MIT License. See [LICENSE](LICENSE) for details.
 Thank you for choosing TitanBot for your Discord server! We're constantly working to improve and add new features based on community feedback.
 
 **Made with ❤️**
-
----
-
-*Last updated: January 2026*
