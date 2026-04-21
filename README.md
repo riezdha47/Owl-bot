@@ -102,7 +102,7 @@ TitanBot is fully containerized for easy deployment.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ramsquishna/TitanBot.git
+   git clone https://github.com/codebymitch/TitanBot.git
    cd TitanBot
    ```
 
@@ -121,7 +121,7 @@ This will start both the bot and a persistent PostgreSQL database.
 The bot is automatically published to GitHub Container Registry on every push to main.
 
 ```bash
-docker pull ghcr.io/ramsquishna/titanbot:main
+docker pull ghcr.io/codebymitch/titanbot:main
 ```
 
 <a name="manual-installation-steps"></a>
