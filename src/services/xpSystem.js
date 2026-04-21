@@ -33,28 +33,32 @@ export async function addXp(client, guild, member, xpToAdd) {
     levelData.totalXp += xpToAdd;
     levelData.lastMessage = Date.now();
     
-    const xpNeededForNextLevel = getXpForLevel(levelData.level + 1);
+    // Handle multi-level jumps
+    let xpNeededForNextLevel = getXpForLevel(levelData.level);
     let didLevelUp = false;
-    
-    
-    if (levelData.xp >= xpNeededForNextLevel) {
+    const initialLevel = levelData.level;
+
+    while (levelData.xp >= xpNeededForNextLevel && levelData.level < 1000) {
+      levelData.xp -= xpNeededForNextLevel;
       levelData.level += 1;
-      levelData.xp = levelData.xp - xpNeededForNextLevel;
       didLevelUp = true;
-      
+      xpNeededForNextLevel = getXpForLevel(levelData.level);
+
       logger.info(`🎉 ${member.user.tag} leveled up to level ${levelData.level} in ${guild.name}`);
-      
-      
+
+      // Award role rewards for each level if applicable
       if (config.roleRewards && config.roleRewards[levelData.level]) {
         await awardRoleReward(guild, member, config.roleRewards[levelData.level], levelData.level);
       }
-      
-      
+    }
+
+    if (didLevelUp) {
+      // If they leveled up, we only announce once (to the highest level reached)
       if (config.announceLevelUp) {
         await sendLevelUpAnnouncement(guild, member, levelData, config);
       }
 
-      
+      // Log the levelup event (once for the highest level reached)
       try {
         await logEvent({
           client,
@@ -75,6 +79,11 @@ export async function addXp(client, guild, member, xpToAdd) {
                 inline: true
               },
               {
+                name: '📈 Levels Gained',
+                value: (levelData.level - initialLevel).toString(),
+                inline: true
+              },
+              {
                 name: '✨ Total XP',
                 value: levelData.totalXp.toString(),
                 inline: true
@@ -82,7 +91,8 @@ export async function addXp(client, guild, member, xpToAdd) {
             ]
           }
         });
-      } catch {
+      } catch (logError) {
+        logger.debug('Failed to log leveling event:', logError.message);
       }
     }
     
