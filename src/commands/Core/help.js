@@ -73,7 +73,7 @@ export async function createInitialHelpMenu(client) {
 
     const botName = client?.user?.username || "Bot";
     const embed = createEmbed({ 
-        title: `🤖 ${botName} Help Center`,
+        title: `🤖 ${botName} меню`,
         description: "Универсальный бот для Discord сервера ARBZ Famq, -# @kreze25",
         color: 'primary'
     });
@@ -152,28 +152,23 @@ export async function createInitialHelpMenu(client) {
     );
 
     embed.setFooter({ 
-        text: "Кто читает, у того мать шлюха" 
+        text: "𝐀𝐑𝐁𝐔𝐙 𝐅𝐀𝐌𝐐" 
     });
     embed.setTimestamp();
 
     const bugReportButton = new ButtonBuilder()
         .setCustomId(BUG_REPORT_BUTTON_ID)
-        .setLabel("Report Bug")
+        .setLabel("Нашли баги?")
         .setStyle(ButtonStyle.Danger);
 
     const supportButton = new ButtonBuilder()
-        .setLabel("Support Server")
-        .setURL("https://discord.gg/QnWNz2dKCE")
-        .setStyle(ButtonStyle.Link);
-
-    const touchpointButton = new ButtonBuilder()
-        .setLabel("Learn from Touchpoint")
-        .setURL("https://www.youtube.com/@TouchDisc")
+        .setLabel("Поддержать сервер")
+        .setURL("https://boosty.to/arbuzfamq")
         .setStyle(ButtonStyle.Link);
 
     const selectRow = createSelectMenu(
         CATEGORY_SELECT_ID,
-        "Select to view the commands",
+        "Выберите, чтобы просмотреть команды",
         options,
     );
 
@@ -192,7 +187,7 @@ export async function createInitialHelpMenu(client) {
 export default {
     data: new SlashCommandBuilder()
         .setName("help")
-        .setDescription("Displays the help menu with all available commands"),
+        .setDescription("Отображает меню справки со всеми доступными командами"),
 
     async execute(interaction, guildConfig, client) {
         
@@ -209,8 +204,8 @@ export default {
         setTimeout(async () => {
             try {
                 const closedEmbed = createEmbed({
-                    title: "Help menu closed",
-                    description: "Help menu has been closed, use /help again.",
+                    title: "Меню справки закрыто",
+                    description: "Меню справки закрыто, введите /help еще раз.",
                     color: "secondary",
                 });
 
