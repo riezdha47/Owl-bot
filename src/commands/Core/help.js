@@ -140,19 +140,19 @@ export async function createInitialHelpMenu(client) {
             inline: true
         },
         {
-            name: "✅ **Verification**",
+            name: "✅ **Верификация**",
             value: "Member verification workflows and access gating",
             inline: true
         },
         {
-            name: "🔧 **Utilities**",
-            value: "Useful tools and server utilities",
+            name: "🔧 **Утилиты**",
+            value: "Полезные инструменты и серверные утилиты",
             inline: true
         }
     );
 
     embed.setFooter({ 
-        text: "Made with ❤️" 
+        text: "Кто читает, у того мать шлюха" 
     });
     embed.setTimestamp();
 
