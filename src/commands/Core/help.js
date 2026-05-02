@@ -161,6 +161,11 @@ export async function createInitialHelpMenu(client) {
         .setLabel("Нашли баги?")
         .setStyle(ButtonStyle.Danger);
 
+    const touchpointButton = new ButtonBuilder()
+        .setLabel("Learn from Touchpoint")
+        .setURL(".")
+        .setStyle(ButtonStyle.Link);
+    
     const supportButton = new ButtonBuilder()
         .setLabel("Поддержать сервер")
         .setURL("https://boosty.to/arbuzfamq")
