@@ -6,12 +6,12 @@ import { InteractionHelper } from '../../utils/interactionHelper.js';
 export default {
     data: new SlashCommandBuilder()
         .setName("ping")
-        .setDescription("Checks the bot's latency and API speed"),
+        .setDescription("Проверяет задержку бота и скорость работы API"),
 
     async execute(interaction) {
         const deferSuccess = await InteractionHelper.safeDefer(interaction);
         if (!deferSuccess) {
-            logger.warn(`Ping interaction defer failed`, {
+            logger.warn(`Не удалось выполнить проверку`, {
                 userId: interaction.user.id,
                 guildId: interaction.guildId,
                 commandName: 'ping'
