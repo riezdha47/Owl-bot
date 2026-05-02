@@ -75,50 +75,50 @@ export async function createInitialHelpMenu(client) {
     const botName = client?.user?.username || "Bot";
     const embed = createEmbed({ 
         title: `🤖 ${botName} Help Center`,
-        description: "Your all-in-one Discord companion for moderation, economy, fun, and server management.",
+        description: "Универсальный бот для Discord сервера ARBZ Famq, -# @kreze25",
         color: 'primary'
     });
 
     embed.addFields(
         {
-            name: "🛡️ **Moderation**",
-            value: "Server moderation, user management, and enforcement tools",
+            name: "🛡️ **Модерация**",
+            value: "Инструменты для модерации сервера, управления пользователями и контроля",
             inline: true
         },
         {
-            name: "💰 **Economy**",
-            value: "Currency system, shops, and virtual economy",
+            name: "💰 **Экономика**",
+            value: "Валютная система, магазины и виртуальная экономика",
             inline: true
         },
         {
-            name: "🎮 **Fun**",
-            value: "Games, entertainment, and interactive commands",
+            name: "🎮 **Развлечения**",
+            value: "Игры, развлечения и интерактивные команды",
             inline: true
         },
         {
-            name: "📊 **Leveling**",
-            value: "User levels, XP system, and progression tracking",
+            name: "📊 **Ранжировка**",
+            value: "Уровни пользователей, система опыта и отслеживание прогресса",
             inline: true
         },
         {
-            name: "🎫 **Tickets**",
-            value: "Support ticket system for server management",
+            name: "🎫 **Билеты**",
+            value: "Система заявок в службу поддержки для управления сервером",
             inline: true
         },
         {
-            name: "🎉 **Giveaways**",
-            value: "Automated giveaway management and distribution",
+            name: "🎉 **Розыгрыши призов**",
+            value: "Автоматизированное управление раздачей подарков и их распространение",
             inline: true
         },
         {
-            name: "👋 **Welcome**",
-            value: "Member welcome messages and onboarding",
+            name: "👋 **Добро пожаловать**",
+            value: "Приветственные сообщения для участников и вводный курс",
             inline: true
         },
         {
             name: "🎂 **Birthdays**",
             value: "Birthday tracking and celebration features",
-            inline: true
+            inline: false
         },
         {
             name: "👥 **Community**",
