@@ -36,7 +36,6 @@ const CATEGORY_ICONS = {
     Search: "🔍",
     Reaction_Roles: "🎭",
     Community: "👥",
-    Birthday: "🎂",
     Config: "⚙️",
 };
 
@@ -111,33 +110,28 @@ export async function createInitialHelpMenu(client) {
             inline: true
         },
         {
-            name: "👋 **Добро пожаловать**",
-            value: "Приветственные сообщения для участников и вводный курс",
+            name: "👋 **Приветствие**",
+            value: "Приветственные сообщения",
             inline: true
         },
         {
-            name: "🎂 **Birthdays**",
-            value: "Birthday tracking and celebration features",
-            inline: false
-        },
-        {
-            name: "👥 **Community**",
-            value: "Community tools, applications, and member engagement",
+            name: "👥 **Сообщество**",
+            value: "Инструменты, приложения и способы взаимодействия с сообществом",
             inline: true
         },
         {
-            name: "⚙️ **Config**",
-            value: "Server and bot configuration management commands",
+            name: "⚙️ **Конфиг**",
+            value: "Команды для управления конфига сервера и ботов",
             inline: true
         },
         {
-            name: "🔢 **Counter**",
-            value: "Live counter channel setup and counter controls",
+            name: "🔢 **Контроллер**",
+            value: "Настройка канала для контроля в реальном времени и управление контролем",
             inline: true
         },
         {
-            name: "🎙️ **Join to Create**",
-            value: "Dynamic voice channel creation and management",
+            name: "🎙️ **Присоединяйтесь, чтобы создать**",
+            value: "Создание и управление динамическими голосовыми каналами",
             inline: true
         },
         {
