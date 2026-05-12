@@ -5,7 +5,7 @@ import {
   AudioPlayerStatus,
   NoSubscriberBehavior,
   getVoiceConnection
-} from "@discord.js/voice";
+} from "@discordjs/voice";
 
 import play from "play-dl";
 
