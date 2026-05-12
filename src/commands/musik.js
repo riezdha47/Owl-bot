@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "discord.js";
-import music from "../../utils/musik.js";
+import music from "wins/src/utils/musik.js";
 import play from "play-dl";
 
 export default {
