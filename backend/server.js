@@ -1,13 +1,16 @@
-const express = require('express')
+const express = require('express');
+const cors = require('cors');
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Backend Online')
-})
+app.get('/', async(req, res) => {
+    res.status(200).json({
+        status: true,
+        message: 'API Running Successfully'
+    });
+});
 
-app.listen(3000, () => {
-  console.log('Backend running on port 3000')
-})
+module.exports = app;
