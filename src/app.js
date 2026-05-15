@@ -357,10 +357,11 @@ class TitanBot extends Client {
 
 try {
   const bot = new TitanBot();
+
+  global.client = bot;
   
   const setupShutdown = () => {
     process.on('SIGTERM', () => bot.shutdown('SIGTERM'));
-    process.on('SIGINT', () => bot.shutdown('SIGINT'));
     
     process.on('uncaughtException', (error) => {
       logger.error('Uncaught Exception:', error);
