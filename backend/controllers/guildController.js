@@ -1,22 +1,14 @@
-exports.getSettings = async(req, res) => {
-    try {
-        res.status(200).json({
-            status: true,
-            data: {}
-        });
-    } catch (error) {
-        res.status(500).json({
-            status: false,
-            message: error.message
-        });
-    }
-};
+const {
+    getBotGuilds
+} = require('../services/discordService');
 
-exports.updateSettings = async(req, res) => {
+exports.getGuilds = async(req, res) => {
     try {
+        const guilds = await getBotGuilds(global.client);
+
         res.status(200).json({
             status: true,
-            message: 'Settings updated successfully'
+            data: guilds
         });
     } catch (error) {
         res.status(500).json({
