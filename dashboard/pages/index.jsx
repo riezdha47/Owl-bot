@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
 export default function Home() {
-
-export default function Home() {
   const [selectedFeature, setSelectedFeature] = useState(null);
   
   const features = [
