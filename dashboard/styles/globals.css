@@ -231,20 +231,45 @@ flex-direction:column;
 }
 
 .sidebar{
-
 width:100%;
+padding:18px;
+gap:12px;
+}
 
-padding:20px;
+.sidebar ul{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.sidebar li{
+margin:0;
 }
 
 .main{
-padding:20px;
+padding:24px;
+gap:24px;
 }
 
 .topbar{
 flex-direction:column;
 align-items:flex-start;
-gap:15px;
+gap:20px;
+}
+
+.stats{
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.features{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.featureCard{
+padding:28px;
+min-height:auto;
 }
 
 }
