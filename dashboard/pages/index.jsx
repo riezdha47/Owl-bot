@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
 export default function Home() {
+
+export default function Home() {
+  const [selectedFeature, setSelectedFeature] = useState(null);
+  
   const features = [
     {
       name: "Auto Moderation",
@@ -96,12 +102,40 @@ export default function Home() {
                 </label>
               </div>
 
-              <button className="settingsBtn">
-                Settings
-              </button>
+              <button
+  className="settingsBtn"
+  onClick={() => setSelectedFeature(feature.name)}
+>
+  Settings
+</button>
             </div>
           ))}
         </div>
+        {selectedFeature && (
+  <div className="modalOverlay">
+    <div className="modal">
+      <div className="modalTop">
+        <h2>{selectedFeature} Settings</h2>
+
+        <button onClick={() => setSelectedFeature(null)}>
+          ✕
+        </button>
+      </div>
+
+      <div className="modalContent">
+        <label>Channel ID</label>
+        <input type="text" placeholder="Enter channel ID" />
+
+        <label>Message</label>
+        <textarea placeholder="Welcome message..."></textarea>
+
+        <button className="saveBtn">
+          Save Settings
+        </button>
+      </div>
+    </div>
+  </div>
+)}
       </main>
     </div>
   );
